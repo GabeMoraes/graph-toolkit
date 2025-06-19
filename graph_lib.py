@@ -74,7 +74,7 @@ class Graph:
             f.write(f"Grau médio: {self.average_degree():.2f}\n")
             f.write("Distribuição empírica do grau dos vértices:\n")
             for degree, count in self.degree_distribution().items():
-                f.write(f"{degree}: {count}\n")
+                f.write(f"Grau {degree}: {count} vértice(s)\n")
 
     def _search(self, start, method='bfs'):
         visited = set()
