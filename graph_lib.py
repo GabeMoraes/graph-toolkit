@@ -228,7 +228,7 @@ class Graph:
                 path.append(v)
                 v = parent[v]
             path.reverse()
-            return dist[target], path
+            return round(dist[target], 6), path
         else:
             if self._has_negative_weights():
                 raise ValueError('Grafo possui pesos negativos, Dijkstra não pode ser usado.')
@@ -256,7 +256,7 @@ class Graph:
                 path.append(v)
                 v = parent[v]
             path.reverse()
-            return dist[target], path
+            return round(dist[target], 6), path
 
     def all_shortest_paths(self, source):
         if self._is_unweighted():
@@ -280,7 +280,7 @@ class Graph:
                     path.append(x)
                     x = parent[x]
                 path.reverse()
-                paths[v] = (dist[v], path)
+                paths[v] = (round(dist[v], 6), path)
             return paths
         else:
             if self._has_negative_weights():
@@ -307,5 +307,5 @@ class Graph:
                     path.append(x)
                     x = parent[x]
                 path.reverse()
-                paths[v] = (dist[v], path)
+                paths[v] = (round(dist[v], 6), path)
             return paths
